@@ -108,12 +108,13 @@ class Game extends React.Component {
             )
         })
         let status;
+        if (history.length === current.squares.length + 1) {
+            status = 'Nobody is winner! Refresh the page to start the game.';
+        }
         if(winner) {
             status = 'Winner: ' + winner;
-        } else {
-            status =  'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-        }
-
+        } 
+        console.log(history);
         return (
             <div className="game">
                 <div className="game-board">
